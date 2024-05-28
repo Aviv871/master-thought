@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dhfd4i5cl3uj1"]
+
+[ext_resource type="FontFile" uid="uid://2l7hf0gu36by" path="res://assets/fonts/membra.ttf" id="1_sl5pg"]
+
+[resource]
+default_font = ExtResource("1_sl5pg")
+default_font_size = 16

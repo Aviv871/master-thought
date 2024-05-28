@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dff2j5teqcocp"]
+
+[ext_resource type="FontFile" uid="uid://5hxqg6n0jcs6" path="res://assets/fonts/PrintedCircuitBoard.ttf" id="1_ikxm1"]
+
+[resource]
+default_font = ExtResource("1_ikxm1")
+default_font_size = 50

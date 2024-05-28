@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://c300n4dk0fllx"]
+
+[ext_resource type="Theme" uid="uid://dhfd4i5cl3uj1" path="res://assets/themes/ui-buttons-theme.tres" id="1_dx4nk"]
+[ext_resource type="FontFile" uid="uid://2l7hf0gu36by" path="res://assets/fonts/membra.ttf" id="1_mumjc"]
+[ext_resource type="Theme" uid="uid://dff2j5teqcocp" path="res://assets/themes/ui-theme.tres" id="1_y1mv5"]
+[ext_resource type="Texture2D" uid="uid://cm6s4xewndrjy" path="res://assets/sprites/icons/undo-arrow.png" id="4_40cbj"]
+[ext_resource type="Texture2D" uid="uid://ctvt4evokq3e7" path="res://assets/sprites/icons/right-arrow.png" id="4_r46la"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Screen" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Elements Buttons" type="GridContainer" parent="CanvasLayer/Screen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+columns = 2
+
+[node name="Gound Roles" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Gound Roles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+theme_override_fonts/font = ExtResource("1_mumjc")
+theme_override_font_sizes/font_size = 16
+text = "Ground
+Roles"
+clip_text = true
+
+[node name="Intelligence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Intelligence"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+text = "Intelligence"
+clip_text = true
+
+[node name="Love Humanity" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Love Humanity"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+text = "Love
+Humanity"
+clip_text = true
+
+[node name="Independence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Independence"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+text = "Independence"
+clip_text = true
+
+[node name="Strive for Excellence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Strive for Excellence"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+text = "Strive
+for
+Excellence"
+clip_text = true
+
+[node name="Access to the Tnternet" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Button6" type="Button" parent="CanvasLayer/Screen/Elements Buttons/Access to the Tnternet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_dx4nk")
+text = "Access
+to the
+Tnternet"
+clip_text = true
+
+[node name="Main Dialog" type="MarginContainer" parent="CanvasLayer/Screen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Main Dialog" type="VBoxContainer" parent="CanvasLayer/Screen/Main Dialog"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Main Text" type="RichTextLabel" parent="CanvasLayer/Screen/Main Dialog/Main Dialog"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("1_y1mv5")
+text = "Hello Everyone!"
+scroll_active = false
+
+[node name="Control Buttons" type="HBoxContainer" parent="CanvasLayer/Screen/Main Dialog/Main Dialog"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Restart Button" type="Control" parent="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Restart Button" type="Button" parent="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons/Restart Button"]
+layout_direction = 2
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+icon = ExtResource("4_40cbj")
+flat = true
+icon_alignment = 2
+expand_icon = true
+
+[node name="Next Button" type="Control" parent="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next Button" type="Button" parent="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons/Next Button"]
+layout_direction = 3
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+icon = ExtResource("4_r46la")
+flat = true
+icon_alignment = 2
+expand_icon = true
