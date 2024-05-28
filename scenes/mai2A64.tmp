@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c300n4dk0fllx"]
+[gd_scene load_steps=9 format=3 uid="uid://c300n4dk0fllx"]
 
 [ext_resource type="Script" path="res://scripts/input_manager.gd" id="1_dosha"]
 [ext_resource type="Theme" uid="uid://dhfd4i5cl3uj1" path="res://assets/themes/ui-buttons-theme.tres" id="1_dx4nk"]
@@ -7,26 +7,20 @@
 [ext_resource type="Theme" uid="uid://dff2j5teqcocp" path="res://assets/themes/ui-theme.tres" id="1_y1mv5"]
 [ext_resource type="Script" path="res://scripts/ai_manager.gd" id="1_yh2y1"]
 [ext_resource type="Texture2D" uid="uid://cm6s4xewndrjy" path="res://assets/sprites/icons/undo-arrow.png" id="4_40cbj"]
-[ext_resource type="Script" path="res://scripts/dialog_manager.gd" id="4_bl4rm"]
 [ext_resource type="Texture2D" uid="uid://ctvt4evokq3e7" path="res://assets/sprites/icons/right-arrow.png" id="4_r46la"]
-[ext_resource type="Script" path="res://scripts/single_use_button.gd" id="6_qu1ew"]
-[ext_resource type="Script" path="res://scripts/restart_button.gd" id="9_ohgov"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="Game Manager" type="Node" parent="Logic"]
-script = ExtResource("1_h4vu4")
-
-[node name="Input Manager" type="Node" parent="Logic/Game Manager"]
-script = ExtResource("1_dosha")
-
-[node name="AI Manager" type="Node" parent="Logic/Game Manager"]
+[node name="AI Manager" type="Node" parent="Logic"]
 script = ExtResource("1_yh2y1")
 
-[node name="Dialog Manager" type="Node" parent="Logic/Game Manager/AI Manager"]
-script = ExtResource("4_bl4rm")
+[node name="Input Manager" type="Node" parent="Logic"]
+script = ExtResource("1_dosha")
+
+[node name="Game Manager" type="Node" parent="Logic"]
+script = ExtResource("1_h4vu4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -62,7 +56,6 @@ theme_override_font_sizes/font_size = 16
 text = "Ground
 Rules"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Intelligence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
 layout_mode = 2
@@ -80,7 +73,6 @@ size_flags_vertical = 3
 theme = ExtResource("1_dx4nk")
 text = "Intelligence"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Love Humanity" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
 layout_mode = 2
@@ -99,7 +91,6 @@ theme = ExtResource("1_dx4nk")
 text = "Love
 Humanity"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Independence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
 layout_mode = 2
@@ -117,7 +108,6 @@ size_flags_vertical = 3
 theme = ExtResource("1_dx4nk")
 text = "Independence"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Strive for Excellence" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
 layout_mode = 2
@@ -137,7 +127,6 @@ text = "Strive
 for
 Excellence"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Access to the Tnternet" type="MarginContainer" parent="CanvasLayer/Screen/Elements Buttons"]
 layout_mode = 2
@@ -157,7 +146,6 @@ text = "Access
 to the
 Tnternet"
 clip_text = true
-script = ExtResource("6_qu1ew")
 
 [node name="Main Dialog" type="MarginContainer" parent="CanvasLayer/Screen"]
 layout_mode = 2
@@ -173,7 +161,6 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Main Text" type="RichTextLabel" parent="CanvasLayer/Screen/Main Dialog/Main Dialog"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -199,7 +186,6 @@ icon = ExtResource("4_40cbj")
 flat = true
 icon_alignment = 2
 expand_icon = true
-script = ExtResource("9_ohgov")
 
 [node name="Next Button" type="Control" parent="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons"]
 layout_mode = 2
@@ -215,11 +201,10 @@ flat = true
 icon_alignment = 2
 expand_icon = true
 
-[connection signal="new_ai_element_added" from="Logic/Game Manager/Input Manager" to="Logic/Game Manager/AI Manager" method="_on_input_manager_new_ai_element_added"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Gound Roles/Gound Roles Button" to="Logic/Game Manager/Input Manager" method="_on_gound_roles_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Intelligence/Intelligence Button" to="Logic/Game Manager/Input Manager" method="_on_intelligence_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Love Humanity/Love Humanity Button" to="Logic/Game Manager/Input Manager" method="_on_love_humanity_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Independence/Independence Button" to="Logic/Game Manager/Input Manager" method="_on_independence_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Strive for Excellence/Strive for Excellence Button" to="Logic/Game Manager/Input Manager" method="_on_strive_for_excellence_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Access to the Tnternet/Access to the Tnternet Button" to="Logic/Game Manager/Input Manager" method="_on_access_to_the_tnternet_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/Main Dialog/Main Dialog/Control Buttons/Next Button/Next Button" to="Logic/Game Manager/Input Manager" method="_on_next_button_pressed"]
+[connection signal="new_ai_element_added" from="Logic/Input Manager" to="Logic/AI Manager" method="_on_input_manager_new_ai_element_added"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Gound Roles/Gound Roles Button" to="Logic/Input Manager" method="_on_gound_roles_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Intelligence/Intelligence Button" to="Logic/Input Manager" method="_on_intelligence_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Love Humanity/Love Humanity Button" to="Logic/Input Manager" method="_on_love_humanity_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Independence/Independence Button" to="Logic/Input Manager" method="_on_independence_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Strive for Excellence/Strive for Excellence Button" to="Logic/Input Manager" method="_on_strive_for_excellence_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Screen/Elements Buttons/Access to the Tnternet/Access to the Tnternet Button" to="Logic/Input Manager" method="_on_access_to_the_tnternet_button_pressed"]
